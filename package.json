@@ -1,0 +1,24 @@
+{
+  "name": "contructor-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build --dist-dir public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lapeko/contructor-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lapeko/contructor-javascript/issues"
+  },
+  "homepage": "https://github.com/lapeko/contructor-javascript#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  }
+}
