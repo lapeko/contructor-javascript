@@ -25,7 +25,7 @@ export class Text extends Block {
     super(value, options);
   }
   toHtml() {
-    return container(row(col(`<p>${this.value}</p>`)));
+    return container(row(col(this.value)));
   }
 }
 
@@ -34,7 +34,7 @@ export class Columns extends Block {
     super(value, options);
   }
   toHtml() {
-    const wrap = (value) => col(value);
+    const wrap = (value) => col(value, "text-center");
     return container(row(this.value.map(wrap).join("")));
   }
 }

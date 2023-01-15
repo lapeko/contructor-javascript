@@ -4,8 +4,17 @@
   "description": "",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel -p 3000",
     "build": "parcel build --dist-dir public"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "parcel-reporter-static-files-copy": "^1.5.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10"
   },
   "repository": {
     "type": "git",
@@ -18,10 +27,8 @@
     "url": "https://github.com/lapeko/contructor-javascript/issues"
   },
   "homepage": "https://github.com/lapeko/contructor-javascript#readme",
-  "devDependencies": {
-    "parcel": "^2.8.2"
-  },
-  "dependencies": {
-    "uuid": "^9.0.0"
+  "staticFiles": {
+    "staticPath": "src/assets",
+    "staticOutPath": "assets"
   }
 }
