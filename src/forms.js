@@ -114,7 +114,7 @@ export class TextForm extends BlockForm {
   toHtml() {
     const inputs = [
       inputGroup(inputText("Add your content", `content-${this.id}`, this.value)),
-      inputGroup(inputText("Add you styles", `styles-${this.id}`)),
+      inputGroup(inputText("Add you styles", `styles-${this.id}`, this.options?.styles)),
     ].join("");
 
     return containerFluid(inputBlock(`<h4>${blockMap.text}</h4>`, inputs));
@@ -148,7 +148,7 @@ export class ColumnsForm extends BlockForm {
   toHtml() {
     const inputs = [
       this.value.map((column, index) => inputGroup(inputText(`Add column-${index + 1} content`, `content-${this.id}-${index}`, column))).join(""),
-      inputGroup(inputText("Add you styles", `styles-${this.id}`)),
+      inputGroup(inputText("Add you styles", `styles-${this.id}`, this.options?.styles)),
       inputGroup(`<div class="d-flex justify-content-between flex-grow-1">${[
         button("Add", "btn btn-success", `add-column-${this.id}`),
         button("Delete", "btn btn-danger", `delete-column-${this.id}`),
@@ -200,7 +200,7 @@ export class ImageForm extends BlockForm {
   toHtml() {
     const inputs = [
       inputGroup(inputText("Name of your image: eg. some-image.jpeg", `image-name-${this.id}`, this.value.split("/")[2])),
-      inputGroup(inputText("Add you styles", `styles-${this.id}`)),
+      inputGroup(inputText("Add you styles", `styles-${this.id}`, this.options?.styles)),
     ].join("");
 
     return containerFluid(inputBlock(`<h4>${blockMap.image}</h4>`, inputs));

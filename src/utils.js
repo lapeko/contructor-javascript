@@ -1,5 +1,5 @@
-export function row(content) {
-  return `<div class="row">${content}</div>`;
+export function row(content, styles = "") {
+  return `<div class="row" style="${styles}">${content}</div>`;
 };
 
 export function col(content, classes) {
@@ -7,12 +7,12 @@ export function col(content, classes) {
   return `<div class="${allClasses}">${content}</div>`;
 };
 
-export function container(content) {
-  return `<div class="container">${content}</div>`;
+export function container(content, styles = "") {
+  return `<div class="container" style="${styles}">${content}</div>`;
 }
 
-export function containerFluid(content) {
-  return `<div class="container-fluid">${content}</div>`;
+export function containerFluid(content, styles = "") {
+  return `<div class="container-fluid" style="${styles}">${content}</div>`;
 }
 
 export function inputBlock(header, content) {

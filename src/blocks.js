@@ -16,7 +16,7 @@ export class Header extends Block {
   }
   toHtml() {
     const { tag = "h2" } = this.options || {};
-    return container(row(col(`<${tag}>${this.value}</${tag}>`)));
+    return container(row(col(`<${tag}>${this.value}</${tag}>`)), this.options?.styles);
   }
 }
 
@@ -25,7 +25,7 @@ export class Text extends Block {
     super(value, options);
   }
   toHtml() {
-    return container(row(col(this.value)));
+    return container(row(col(this.value)), this.options?.styles);
   }
 }
 
@@ -35,7 +35,7 @@ export class Columns extends Block {
   }
   toHtml() {
     const wrap = (value) => col(value, "text-center");
-    return container(row(this.value.map(wrap).join("")));
+    return container(row(this.value.map(wrap).join("")), this.options?.styles);
   }
 }
 
@@ -44,7 +44,7 @@ export class Image extends Block {
     super(value, options);
   }
   toHtml() {
-    const { alt = "" } = this.options || {};
-    return row(col(`<img src="${this.value}" alt="${alt}" />`));
+    const { alt = "", styles = "" } = this.options || {};
+    return row(`<img src="${this.value}" style="${styles}" alt="${alt}" />`);
   }
 }
