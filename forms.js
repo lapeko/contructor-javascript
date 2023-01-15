@@ -31,7 +31,7 @@ export class LastForm extends Form {
       </div>`,
       inputs,
       `<div class="d-grid"/>
-        ${button("Hello", "btn btn-primary", `${this.id}-refresh`)}
+        ${button("Refresh site view", "btn btn-primary", `${this.id}-refresh`)}
       </div>`
     ));
   }
