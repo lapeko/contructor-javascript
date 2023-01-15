@@ -1,0 +1,11 @@
+#root {
+  display: flex;
+}
+
+#aside {
+  width: 25vw;
+}
+
+#site {
+  width: 75vw;
+}

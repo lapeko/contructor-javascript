@@ -20,5 +20,8 @@
   "homepage": "https://github.com/lapeko/contructor-javascript#readme",
   "devDependencies": {
     "parcel": "^2.8.2"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
   }
 }

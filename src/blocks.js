@@ -1,6 +1,7 @@
-class Block {
-  constructor(type, value, options) {
-    this.type = type;
+import { col, row, container } from './utils';
+
+export class Block {
+  constructor(value, options) {
     this.value = value;
     this.options = options;
   }
@@ -11,16 +12,39 @@ class Block {
 
 export class Header extends Block {
   constructor(value, options) {
-    super("Header", value, options);
+    super(value, options);
   }
   toHtml() {
     const { tag = "h2" } = this.options || {};
-    return `
-      <div className="row">
-        <div className="col-sm">
-          <${tag}>${this.value}</${tag}>
-        </div>
-      </div>
-    `;
+    return container(row(col(`<${tag}>${this.value}</${tag}>`)));
+  }
+}
+
+export class Text extends Block {
+  constructor(value, options) {
+    super(value, options);
+  }
+  toHtml() {
+    return container(row(col(`<p>${this.value}</p>`)));
+  }
+}
+
+export class Columns extends Block {
+  constructor(value, options) {
+    super(value, options);
+  }
+  toHtml() {
+    const wrap = (value) => col(value);
+    return container(row(this.value.map(wrap).join("")));
+  }
+}
+
+export class Image extends Block {
+  constructor(value, options) {
+    super(value, options);
+  }
+  toHtml() {
+    const { alt = "" } = this.options || {};
+    return row(col(`<img src="${this.value}" alt="${alt}" />`));
   }
 }
